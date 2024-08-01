@@ -67,6 +67,10 @@ class Parametr extends Model
 
             $root = $_SERVER['DOCUMENT_ROOT'] . '/images';
 
+            if (!is_dir($root)) {
+                mkdir($root, 0777, true);
+            }
+
             //chmod($root, 0777);
 
             $path = $root . '/' . $id . '_' . self::$iconTypeList[$type];
